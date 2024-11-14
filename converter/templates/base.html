@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Unit Converter</h1>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="{% url 'length' %}"
+              class="{% if section == 'length' %}active{% endif %}"
+              >Length</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'weight' %}"
+              class="{% if section == 'weight' %}active{% endif %}"
+              >Weight</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'temperature' %}"
+              class="{% if section == 'temp' %}active{% endif %}"
+              >Temperature</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="conversion">{% block content %} {% endblock content %}</div>
+    </div>
+  </body>
+</html>

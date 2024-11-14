@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Weight {% endblock title %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <form action="" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Convert</button>
+    </form>
+    {% endblock content %}
+  </body>
+</html>
