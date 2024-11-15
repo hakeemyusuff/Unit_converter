@@ -1,9 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %}
-<div>
+<div class="result">
   <h2>Result of your calculation</h2>
-  <p>{{ result }}</p>
+  <p> {{ value }} {{ from_unit }} = {{ result }} {{ to_unit }}  </p>
   <a href="{% url 'length' %}"><button>Reset</button></a>
 </div>
 
 {% endblock content %}
+ 

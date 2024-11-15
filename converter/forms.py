@@ -21,9 +21,9 @@ weight_choice = [
 ]
 
 temperature_choices = [
-    ("c", "Celsius"),
-    ("f", "Fahrenheit"),
-    ("k", "Kelvin"),
+    ("degC", "Celsius"),
+    ("degF", "Fahrenheit"),
+    ("kelvin", "Kelvin"),
 ]
 
 
@@ -53,8 +53,8 @@ class WeightConversion(forms.Form):
             label="Unit to convert to",
         )
         
-class Temperature(forms.Form):
-        Value = forms.FloatField(label="Enter the temperature to convert")
+class TemperatureConversion(forms.Form):
+        value = forms.FloatField(label="Enter the temperature to convert")
         from_unit = forms.ChoiceField(
             choices=temperature_choices,
             widget=forms.Select,
